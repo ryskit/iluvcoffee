@@ -1,8 +1,10 @@
 import {
   HttpException,
   HttpStatus,
+  Inject,
   Injectable,
   NotFoundException,
+  Scope,
 } from '@nestjs/common'
 import { Coffee } from './entities/coffee.entity'
 import { InjectRepository } from '@nestjs/typeorm'
@@ -12,8 +14,9 @@ import { CreateCoffeeDto } from './dto/create-coffee.dto'
 import { Flavor } from './entities/flavor.entity'
 import { PaginationQueryDto } from 'src/common/dto/pagination-query.dto'
 import { Event } from 'src/events/entities/event.entity'
+import { COFFEE_BRANDS } from './coffee.constants'
 
-@Injectable()
+@Injectable({ scope: Scope.DEFAULT })
 export class CoffeesService {
   constructor(
     @InjectRepository(Coffee)
