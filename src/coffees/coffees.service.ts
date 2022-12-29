@@ -15,6 +15,7 @@ import { Flavor } from './entities/flavor.entity'
 import { PaginationQueryDto } from 'src/common/dto/pagination-query.dto'
 import { Event } from 'src/events/entities/event.entity'
 import { COFFEE_BRANDS } from './coffee.constants'
+import { ConfigService } from '@nestjs/config'
 
 @Injectable({ scope: Scope.DEFAULT })
 export class CoffeesService {
