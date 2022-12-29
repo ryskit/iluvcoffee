@@ -23,7 +23,7 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter())
   app.useGlobalInterceptors(
     new WrapResponseInterceptor(),
-    new TimeoutInterceptor(),
+    // new TimeoutInterceptor(),
   )
 
   const options = new DocumentBuilder()
